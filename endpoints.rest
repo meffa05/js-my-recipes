@@ -1,4 +1,3 @@
-
 ### Variables
 @url = http://localhost:3010/
 @apiUrl = http://localhost:3010/api/v1/
@@ -6,14 +5,20 @@
 
 ### Webpage Endpoint
 
+
+
 ### Recipe List Endpoint
 GET {{apiUrl}}
 
+
+
 ### Recipe Detail Endpoint
-GET {{apiUrl}}recipe/1
+GET {{apiUrl}}recipes/1
+
+
 
 ### Add Recipe Endpoint
-POST {{apiUrl}}recipe/add
+POST {{apiUrl}}recipes/add
 Content-Type: application/json
 
 {
