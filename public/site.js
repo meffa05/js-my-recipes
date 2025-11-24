@@ -17,7 +17,7 @@ const getRecipes = async () => {
 }
 
 const getRecipe = async id => {
-	const response = await fetch(`/api/v1/recipe/${id}`)
+	const response = await fetch(`/api/v1/recipes/${id}`)
 	return await response.json()
 }
 
