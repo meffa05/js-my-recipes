@@ -1,22 +1,22 @@
 const router = require('express').Router()
 const recipes = require('../../../data/recipes.json')
 
-router.get('/', (_, response) =>{
+ router.get('/', (_, response) =>{
+     const summaries = recipes.map(recipe =>{
+         const {id, title, image, prepTime, difficulty} = recipe
+         return {id, title, image, prepTime, difficulty}
+     })
+     response.send(summaries)
+ })
+
+//get elements from all the recipes
+ router.get('/api/v1/', (_, response) =>{
     const summaries = recipes.map(recipe =>{
         const {id, title, image, prepTime, difficulty} = recipe
         return {id, title, image, prepTime, difficulty}
     })
     response.send(summaries)
 })
-
-//get elements from all the recipes
-// router.get('/api/v1/', (_, response) =>{
-//     const summaries = recipes.map(recipe =>{
-//         const {id, title, image, prepTime, difficulty} = recipe
-//         return {id, title, image, prepTime, difficulty}
-//     })
-//     response.send(summaries)
-// })
 
 //get full recipe with a matching id
 router.get('/api/v1/recipes/:id', (request, response) =>{
@@ -33,7 +33,7 @@ router.get('/api/v1/recipes/:id', (request, response) =>{
 
 //add recipe to the array
 
-router.get('/api/v1/recipe/add', (request, response) =>{
+router.post('/api/v1/recipe/add', (request, response) =>{
 
     const id=recipes.length+1 //new id
     const recipe = request.body
