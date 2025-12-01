@@ -31,7 +31,7 @@ router.get('/api/v1/recipes/:id', (request, response) =>{
     response.status(404).send({error: 'Could not find recipe with id '+{id}})
 })
 
-//add recipe to the array
+//add recipe to the array (POST)
 
 router.post('/api/v1/recipe/add', (request, response) =>{
 
